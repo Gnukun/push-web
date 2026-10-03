@@ -1691,6 +1691,11 @@ ul, ol {
   transition: all var(--transition-base);
 }
 
+.showcase-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .showcase-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
