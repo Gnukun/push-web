@@ -426,19 +426,6 @@ ul, ol {
   gap: var(--space-3);
 }
 
-.btn-header {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .btn-header {
-    display: inline-flex;
-    padding: 9px 20px;
-    min-height: 42px;
-    font-size: 0.875rem;
-  }
-}
-
 /* Hamburger Toggle Button */
 .hamburger-btn {
   display: flex;
@@ -777,6 +764,21 @@ ul, ol {
   }
 }
 
+.hero-price-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 8px 4px;
+  color: var(--color-primary);
+  font-weight: 800;
+  border-bottom: 2px solid currentColor;
+}
+
+.hero-price-link:hover {
+  color: var(--color-primary-hover);
+}
+
 .hero-subnote {
   display: flex;
   align-items: center;
@@ -891,123 +893,47 @@ ul, ol {
 }
 
 /* Comparison Card */
-.comparison-card {
+.about-value-card {
   background-color: #FFFFFF;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
 }
 
 @media (min-width: 768px) {
-  .comparison-card {
+  .about-value-card {
     padding: var(--space-8);
   }
 }
 
-.comparison-title {
+.about-value-title {
   font-size: 1.1875rem;
   font-weight: 800;
   color: var(--color-navy-dark);
-  text-align: center;
   margin-bottom: var(--space-6);
 }
 
-.comparison-table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+.about-value-list {
+  display: grid;
+  gap: var(--space-4);
 }
 
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-  font-size: 0.8125rem;
+.about-value-list li {
+  display: grid;
+  gap: 2px;
+  padding-left: var(--space-5);
+  border-left: 3px solid var(--color-primary);
 }
 
-@media (min-width: 480px) {
-  .comparison-table {
-    font-size: 0.875rem;
-  }
-}
-
-.comparison-table th,
-.comparison-table td {
-  padding: 10px 6px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-@media (min-width: 480px) {
-  .comparison-table th,
-  .comparison-table td {
-    padding: 12px 10px;
-  }
-}
-
-.comparison-table thead th {
-  font-weight: 800;
+.about-value-list strong {
   color: var(--color-navy-dark);
-  padding-bottom: var(--space-3);
-  font-size: 0.75rem;
 }
 
-@media (min-width: 480px) {
-  .comparison-table thead th {
-    font-size: 0.8125rem;
-  }
-}
-
-.row-label {
-  font-weight: 700;
-  text-align: left;
-  color: var(--color-navy-dark);
-  width: 28%;
-  white-space: nowrap;
-}
-
-.col-traditional {
+.about-value-list span {
   color: var(--color-text-muted);
-  width: 36%;
-  background-color: var(--color-bg-subtle);
-  font-size: 0.78125rem;
-}
-
-@media (min-width: 480px) {
-  .col-traditional {
-    font-size: 0.875rem;
-  }
-}
-
-.col-push {
-  color: var(--color-primary);
-  width: 36%;
-  background-color: var(--color-primary-light);
-  font-weight: 700;
-  font-size: 0.78125rem;
-}
-
-@media (min-width: 480px) {
-  .col-push {
-    font-size: 0.875rem;
-  }
-}
-
-.comparison-table thead .col-push {
-  border-top-left-radius: var(--radius-md);
-  border-top-right-radius: var(--radius-md);
-}
-
-.comparison-table tbody tr:last-child .col-push {
-  border-bottom-left-radius: var(--radius-md);
-  border-bottom-right-radius: var(--radius-md);
-  border-bottom: none;
-}
-
-.highlight-cell strong {
-  color: var(--color-primary-hover);
-  display: block;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -1564,6 +1490,29 @@ ul, ol {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: var(--space-12);
+}
+
+.target-content-grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.target-panel {
+  min-width: 0;
+}
+
+.target-panel-title {
+  margin-bottom: var(--space-4);
+  color: var(--color-navy-dark);
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .target-content-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
 }
 
 .target-checklist {
@@ -2221,13 +2170,6 @@ ul, ol {
   color: #FFFFFF;
   padding-top: var(--space-16);
   padding-bottom: var(--space-12);
-  margin-bottom: 64px; /* Space for Mobile Sticky Bar */
-}
-
-@media (min-width: 768px) {
-  .site-footer {
-    margin-bottom: 0;
-  }
 }
 
 .footer-top {
@@ -2309,66 +2251,6 @@ ul, ol {
 .footer-contact-info a {
   color: #FFFFFF;
   text-decoration: underline;
-}
-
-/* ==========================================================================
-   16. STICKY MOBILE BOTTOM BAR
-   ========================================================================== */
-.mobile-sticky-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-top: 1px solid var(--color-border);
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
-  padding: 10px 16px;
-  z-index: 990;
-  transform: translateY(100%);
-  transition: transform var(--transition-base);
-}
-
-.mobile-sticky-bar.is-visible {
-  transform: translateY(0);
-}
-
-@media (min-width: 768px) {
-  .mobile-sticky-bar {
-    display: none !important;
-  }
-}
-
-.sticky-bar-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.sticky-bar-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.sticky-badge {
-  font-size: 0.6875rem;
-  font-weight: 800;
-  color: var(--color-accent-green);
-}
-
-.sticky-lead {
-  font-size: 0.8125rem;
-  font-weight: 800;
-  color: var(--color-navy-dark);
-}
-
-.sticky-btn {
-  padding: 8px 16px;
-  font-size: 0.8125rem;
-  min-height: 40px;
-  flex-shrink: 0;
 }
 
 /* ==========================================================================

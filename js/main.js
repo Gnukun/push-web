@@ -12,12 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileNav = document.getElementById('mobileNav');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-  const mobileStickyBar = document.getElementById('mobileStickyBar');
   const copyEmailBtn = document.getElementById('copyEmailBtn');
   const copyBtnText = document.getElementById('copyBtnText');
   const toastNotification = document.getElementById('toastNotification');
   const faqQuestions = document.querySelectorAll('.faq-question');
-  const contactSection = document.getElementById('contact');
 
   const EMAIL_ADDRESS = 'pushweb77@gmail.com';
 
@@ -61,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      3. HEADER SCROLL & STICKY MOBILE BAR
      ========================================================================== */
-  let lastScrollY = window.scrollY;
-
   function handleScroll() {
     const currentScrollY = window.scrollY;
 
@@ -75,32 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Mobile Sticky Bottom Bar visibility
-    if (mobileStickyBar) {
-      // Show when scrolled past hero section (~350px)
-      const pastHero = currentScrollY > 350;
-      
-      // Hide when contact section is clearly in view
-      let inContact = false;
-      if (contactSection) {
-        const contactRect = contactSection.getBoundingClientRect();
-        inContact = contactRect.top < window.innerHeight * 0.7;
-      }
-
-      if (pastHero && !inContact) {
-        mobileStickyBar.classList.add('is-visible');
-        mobileStickyBar.setAttribute('aria-hidden', 'false');
-      } else {
-        mobileStickyBar.classList.remove('is-visible');
-        mobileStickyBar.setAttribute('aria-hidden', 'true');
-      }
-    }
-
-    lastScrollY = currentScrollY;
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
+
+  // Reset the mobile drawer when switching to the desktop layout.
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && hamburgerBtn?.classList.contains('is-active')) {
+      toggleMobileNav(false);
+    }
+  });
 
   /* ==========================================================================
      4. FAQ ACCORDION

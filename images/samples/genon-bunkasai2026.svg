@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">桜理祭 LIVE 2026</title>
+  <desc id="desc">K-on OURISAIのイベントWebサイトプレビュー</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07192d"/>
+      <stop offset="0.65" stop-color="#103d68"/>
+      <stop offset="1" stop-color="#39d5ff"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#9beaff" stroke-opacity=".14"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <rect width="900" height="600" fill="url(#grid)"/>
+  <path d="M0 492H900" stroke="#39d5ff" stroke-opacity=".5"/>
+  <path d="M0 510H900" stroke="#39d5ff" stroke-opacity=".2"/>
+  <text x="64" y="86" fill="#8ee9ff" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="5">SAKURASAI 2026 // STAGE LIVE</text>
+  <text x="60" y="245" fill="#fff" font-family="Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="2">K-on!</text>
+  <text x="60" y="330" fill="#65dcff" font-family="Arial, sans-serif" font-size="88" font-weight="800" letter-spacing="4">OURISAI</text>
+  <text x="64" y="390" fill="#d7f7ff" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="3">LIVE 2026</text>
+  <rect x="610" y="180" width="220" height="150" rx="8" fill="#07192d" fill-opacity=".72" stroke="#39d5ff" stroke-width="2"/>
+  <text x="635" y="220" fill="#8ee9ff" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">DATE</text>
+  <text x="635" y="270" fill="#fff" font-family="Arial, sans-serif" font-size="38" font-weight="800">10.31 SAT</text>
+  <text x="635" y="306" fill="#d7f7ff" font-family="Arial, sans-serif" font-size="18">13:00 - 14:30</text>
+  <text x="64" y="548" fill="#8ee9ff" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="4">OFFICIAL LIVE STAGE</text>
+</svg>
